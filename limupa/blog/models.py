@@ -9,3 +9,12 @@ class Post(models.Model):
     description = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
+
+
+class BlogImages(models.Model):
+    images = models.ImageField(upload_to='blog/images/', blank=True, null=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='images')
+
+
+class Comment(models.Model):
+    user = models.ForeignKey()
