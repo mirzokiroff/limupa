@@ -75,8 +75,8 @@ DATABASES = {
         'PORT': 5434,
         'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': 'black090',
-        'NAME': 'sleep_db'
+        'PASSWORD': 1,
+        'NAME': 'shop_django'
     }
 }
 
