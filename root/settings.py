@@ -4,7 +4,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-sys.path.append(os.path.join(BASE_DIR, 'apps'))
+sys.path.append(os.path.join(BASE_DIR, 'limupa'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -30,12 +30,11 @@ INSTALLED_APPS = [
     # Installed apps
     'ckeditor',
     # Custom apps
-
     'limupa.blog',
     'limupa.shop',
     'limupa.user'
 ]
-AUTH_USER_MODEL = 'limupa.user.User'
+AUTH_USER_MODEL = 'user.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,7 +46,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'root.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
