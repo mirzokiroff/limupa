@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Custom apps
+
     'limupa.blog',
     'limupa.shop',
     'limupa.user'
