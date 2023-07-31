@@ -6,4 +6,4 @@ from django.db import models
 
 class User(AbstractUser):
     image = models.ImageField(upload_to='users/', blank=True, null=True)
-    phone = models.
+    email = models.EmailField(max_length=255, unique=True)
