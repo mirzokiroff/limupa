@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-sq9fyz532yrnupe=g@j4w3o*u68-@7(ylk@9hq8vk+^zceaewc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed apps
     'ckeditor',
+    'ckeditor_uploader',
+
     # Custom apps
     'limupa.blog',
     'limupa.shop',
@@ -71,11 +73,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'limupa',
-        'USER': 'admin',
-        'PASSWORD': '11',
+        'NAME': 'sleep_db',
+        'USER': 'postgres',
+        'PASSWORD': 'black090',
         'HOST': 'localhost',  # Change this to your PostgreSQL server's host if it's not on localhost
-        'PORT': '',           # Leave it empty to use the default PostgreSQL port (usually 5432)
+        'PORT': '5434',
     }
 }
 
@@ -119,6 +121,8 @@ STATIC_ROOT = os.path.join(BASE_DIR / 'static')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
+
+CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
