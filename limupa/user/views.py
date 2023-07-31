@@ -24,3 +24,7 @@ class WishList(TemplateView):
 class ShopList(TemplateView):
     template_name = 'shop-list.html'
 
+
+class ShoppingCart(TemplateView):
+    template_name = 'shopping-cart.html'
+

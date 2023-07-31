@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     # Installed apps
     'ckeditor',
     # Custom apps
-
     'limupa.blog',
     'limupa.shop',
     'limupa.user'
@@ -47,7 +46,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'root.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
