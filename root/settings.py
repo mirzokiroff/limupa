@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'limupa.shop',
     'limupa.user'
 ]
-AUTH_USER_MODEL = 'limupa.user.User'
+AUTH_USER_MODEL = 'user.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
