@@ -14,7 +14,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
 class Comment(models.Model):
     user = models.ForeignKey('user.User', on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
