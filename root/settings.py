@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Installed apps
+    'ckeditor',
     # Custom apps
 
     'limupa.blog',

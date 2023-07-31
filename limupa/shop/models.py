@@ -9,14 +9,17 @@ class Core(models.Model):
     class Meta:
         abstract = True
 
+
 class GeneralProductCategory(Core):
     created_at = None
     updated_at = None
+
 
 class ProductCategory(Core):
     created_at = None
     updated_at = None
     general = models.ForeignKey(GeneralProductCategory, on_delete=models.CASCADE)
+
 
 class Product(Core):
     id = None
