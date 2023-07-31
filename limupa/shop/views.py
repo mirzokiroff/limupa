@@ -16,3 +16,7 @@ class Index3(TemplateView):
 class Index4(TemplateView):
     template_name = 'index-4.html'
 
+
+class Wishlist(TemplateView):
+    template_name = 'wishlist.html'
+
