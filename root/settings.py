@@ -28,9 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Custom apps
-    'blog',
-    'shop',
-    'user'
+
+    'limupa.blog',
+    'limupa.shop',
+    'limupa.user'
 ]
 
 MIDDLEWARE = [
