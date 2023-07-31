@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sleep_db',
+        'NAME': 'shop_django',
         'USER': 'postgres',
-        'PASSWORD': 'black090',
+        'PASSWORD': '1',
         'HOST': 'localhost',  # Change this to your PostgreSQL server's host if it's not on localhost
-        'PORT': '5434',
+        'PORT': '5432',
     }
 }
 
