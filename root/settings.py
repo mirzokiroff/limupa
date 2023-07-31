@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     # Installed apps
     'ckeditor',
     'ckeditor_uploader',
-
     # Custom apps
     'limupa.blog',
     'limupa.shop',
@@ -73,11 +72,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'PORT': 5432,
+        'PORT': 5434,
         'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': 1,
-        'NAME': 'shop_django'
+        'PASSWORD': 'black090',
+        'NAME': 'sleep_db'
     }
 }
 
