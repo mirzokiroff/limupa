@@ -70,12 +70,12 @@ WSGI_APPLICATION = 'root.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'limupa',
-        'USER': 'admin',
-        'PASSWORD': '11',
-        'HOST': 'localhost',  # Change this to your PostgreSQL server's host if it's not on localhost
-        'PORT': '',           # Leave it empty to use the default PostgreSQL port (usually 5432)
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'PORT': 5432,
+        'HOST': 'localhost',
+        'USER': 'postgres',
+        'PASSWORD': 1,
+        'NAME': 'shop_django'
     }
 }
 
