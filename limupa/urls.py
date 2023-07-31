@@ -1,5 +1,7 @@
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('blog.urls'))
+    path('', include('limupa.blog.urls')),
+    path('users', include('limupa.user.urls')),
+    path('shop', include('limupa.shop.urls')),
 ]
