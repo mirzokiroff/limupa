@@ -77,7 +77,7 @@ DATABASES = {
         'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': '1',
-        'NAME': 'm7'
+        'NAME': 'shop_django'
     }
 }
 
