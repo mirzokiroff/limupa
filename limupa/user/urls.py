@@ -1,6 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from limupa.user.views import Index
 
-# urlpatterns = [
-#     path('user/', include(''))
-# ]
+urlpatterns = [
+    path('', Index.as_view(), name='index')
+]
