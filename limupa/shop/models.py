@@ -8,7 +8,6 @@ class Core(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # fakyu
     class Meta:
         abstract = True
 
@@ -23,14 +22,9 @@ class ProductCategory(Core):
 
 
 class ProductImage(Core):
-    product_id = models.ForeignKey('Product', models.CASCADE, 'product_id')
+    product_id = models.ForeignKey('Product', models.CASCADE, 'product_image')
     is_general = models.BooleanField(default=False)
     image = models.ImageField(upload_to='shop/')
-
-
-class ProductColor(Core):
-    created_at, updated_at = None, None
-    color_code = models.CharField(max_length=10)
 
 
 class Detailed(models.Model):
@@ -40,11 +34,11 @@ class Detailed(models.Model):
         L = 'L', 'Large'
         XL = 'XL', 'Extra large'
 
-    product_id = models.ForeignKey('Product', models.CASCADE, 'product_id')
+    product_id = models.ForeignKey('Product', models.CASCADE, 'product_detailed')
     price = models.IntegerField(default=0)
     quantity = models.IntegerField(default=0)
     detail = models.CharField(max_length=100)
-    color = models.ForeignKey(ProductColor, models.CASCADE, 'color')
+    # color = models.ForeignKey(ProductColor, models.CASCADE, 'color')
     size = models.CharField(choices=SIZE_CHOICES.choices, null=True)
 
 
