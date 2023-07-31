@@ -1,4 +1,4 @@
 from django.contrib import admin
-from limupa.user.models import User
+from .models import User
 
-admin.site.registr(User)
+admin.site.register(User)
