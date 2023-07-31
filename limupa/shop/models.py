@@ -5,7 +5,7 @@ class Core(models.Model):
     title = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    # fakyu
     class Meta:
         abstract = True
 
@@ -14,7 +14,7 @@ class GeneralProductCategory(Core):
     created_at = None
     updated_at = None
 
-
+#fakyu
 class ProductCategory(Core):
     created_at = None
     updated_at = None
@@ -28,3 +28,4 @@ class Product(Core):
     description = models.TextField()
     images = None
     info = None
+#fakyu
