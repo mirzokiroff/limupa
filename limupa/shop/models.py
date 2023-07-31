@@ -10,6 +10,9 @@ class Core(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return self.title
+
 
 class GeneralProductCategory(Core):
     created_at, updated_at = None, None
@@ -32,6 +35,9 @@ class Detailed(models.Model):
         M = 'M', 'Medium'
         L = 'L', 'Large'
         XL = 'XL', 'Extra large'
+
+    class PRODUCT_COLOR(models.TextChoices):
+        BlUE = ''
 
     product_id = models.ForeignKey('Product', models.CASCADE, 'product_detailed')
     price = models.IntegerField(default=0)
