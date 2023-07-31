@@ -1,10 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import View, ListView, TemplateView
+# from main.models import author, about_me, my_tools
 
 
-class HomeView(TemplateView):
-    template_name = 'index.html'
-
-
-def NotfoundView(request):
-    return render(request, '404.html')
+# Create your views here.
+def home(request):
+    return render(request, 'index.html')
