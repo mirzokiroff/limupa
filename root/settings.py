@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-sq9fyz532yrnupe=g@j4w3o*u68-@7(ylk@9hq8vk+^zceaewc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed apps
     'ckeditor',
+    'ckeditor_uploader',
+
     # Custom apps
     'limupa.blog',
     'limupa.shop',
