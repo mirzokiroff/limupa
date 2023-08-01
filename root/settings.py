@@ -32,9 +32,9 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 
     # Custom apps
-    'limupa.blog',
-    'limupa.shop',
-    'limupa.user'
+    'blog',
+    'shop',
+    'user'
 ]
 AUTH_USER_MODEL = 'user.User'
 MIDDLEWARE = [

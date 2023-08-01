@@ -1,6 +1,7 @@
-from django.views.generic import TemplateView
-from limupa.user.forms import ContactForm
-from limupa.user.utls import send_message
+from django.views.generic import TemplateView, CreateView
+from user.forms import ContactForm, RegisterForm
+from user.models import User
+from user.utls import send_message
 
 
 class W404(TemplateView):
@@ -110,7 +111,9 @@ class Index4(TemplateView):
     template_name = 'index-4.html'
 
 
-class LoginRegister(TemplateView):
+class LoginRegister(CreateView):
+    queryset = User.objects.all()
+    form_class = RegisterForm
     template_name = 'login-register.html'
 
 
