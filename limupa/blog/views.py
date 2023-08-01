@@ -11,26 +11,14 @@ class BlogLeft(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(object_list=object_list, **kwargs)
-        data['posts'] = Post.objects.all()
+        if self.request.GET:
+            pic = self.request.GET.dict().popitem()[0]
+            data['posts'] = BlogCategory.objects.get(title=pic).post_category.all()
+        else:
+            data['posts'] = Post.objects.all()
         data['recent'] = Post.objects.all().order_by('-created_at')[:10]
         data['category'] = BlogCategory.objects.all()
-        return data
-
-
-class FilterView(DetailView, ListView, CreateView):
-    model = Post
-    form_class = BlogCommentForm
-    template_name = 'blog-details-right-sidebar.html'
-    success_url = reverse_lazy('blog-left')
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        data = super().get_context_data(object_list=object_list, **kwargs)
-        data['detailpost'] = Post.objects.filter(id=self.object.id).first()
-        data['postcategory'] = Post.objects.get(pk=self.object.id).categories.all()
-        data['category'] = BlogCategory.objects.all()
-        data['recent'] = Post.objects.all().order_by('-created_at')[:10]
-        data['comments'] = Comment.objects.filter(post_id=self.object.id).all()
-        data['post'] = self.object.id
+        # data['comments'] = Comment.objects.filter(post_id=self.object.id).all()
         return data
 
 
