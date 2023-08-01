@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'PORT': 5433,
+        'PORT': 5434,
         'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': '1',
-        'NAME': 'limupa_db'
+        'PASSWORD': 'black090',
+        'NAME': 'sleep_db'
     }
 }
 
