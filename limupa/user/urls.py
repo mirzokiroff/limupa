@@ -7,6 +7,7 @@ from user.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index
     SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
 
 urlpatterns = [
+    path('', Index.as_view(), name='index'),
     path('user/login-register/', LoginRegister.as_view(), name='login-register'),
     path('user/product-details/', ProductDetails.as_view(), name='product-details'),
     path('user/shop-3/', Shop3.as_view(), name='shop-3'),

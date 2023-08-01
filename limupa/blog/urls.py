@@ -9,5 +9,4 @@ from blog.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index
 urlpatterns = [
     path('blog/blog-details/', BlogDetailsRight.as_view(), name='blog-details-right'),
     path('', BlogLeft.as_view(), name='blog-left'),
-
 ]

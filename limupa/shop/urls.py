@@ -7,9 +7,7 @@ from shop.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index
     SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
 
 urlpatterns = [
-    path('about-us/', AboutUs.as_view(), name='about-us'),
     path('blog-3-col/', Blog3Col.as_view(), name='blog-3-col'),
-    path('blog-details/', BlogDetailsLeft.as_view(), name='blog-details-left'),
     path('cart/', Cart.as_view(), name='cart'),
     path('check-out/', CheckOut.as_view(), name='check-out'),
     path('compare/', Compare.as_view(), name='compare'),
