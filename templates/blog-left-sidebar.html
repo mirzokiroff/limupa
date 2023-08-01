@@ -104,7 +104,7 @@
                                             <div class="li-blog-details">
                                                 <h3 class="li-blog-heading pt-25"><a href="{% url 'blog-details-right' post.pk %}">{{ post.title }}</a></h3>
                                                 <div class="li-blog-meta">
-                                                    <a class="author" href="#"><i class="fa fa-user"></i>{{ post }}</a>
+                                                    <a class="author" href="#"><i class="fa fa-user"></i>{{ post.user.username }}</a>
                                                     <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
                                                     <a class="post-time" href="#"><i class="fa fa-calendar"></i> {{ post.created_at|date }}</a>
                                                 </div>

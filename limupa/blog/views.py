@@ -1,6 +1,8 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
-from blog.models import Post, BlogCategory
+from blog.forms import BlogCommentForm
+from blog.models import Post, BlogCategory, Comment
 
 
 class BlogLeft(ListView):
@@ -15,15 +17,37 @@ class BlogLeft(ListView):
         return data
 
 
-class BlogLeftDetails(DetailView):
+class FilterView(DetailView, ListView, CreateView):
     model = Post
+    form_class = BlogCommentForm
     template_name = 'blog-details-right-sidebar.html'
+    success_url = reverse_lazy('blog-left')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(object_list=object_list, **kwargs)
-        data['detailpost'] = Post.objects.filter(id=self.object).first()
-        data['postcategory'] = Post.objects.all().post_category
+        data['detailpost'] = Post.objects.filter(id=self.object.id).first()
+        data['postcategory'] = Post.objects.get(pk=self.object.id).categories.all()
         data['category'] = BlogCategory.objects.all()
+        data['recent'] = Post.objects.all().order_by('-created_at')[:10]
+        data['comments'] = Comment.objects.filter(post_id=self.object.id).all()
+        data['post'] = self.object.id
+        return data
+
+
+class BlogLeftDetails(DetailView, CreateView):
+    model = Post
+    form_class = BlogCommentForm
+    template_name = 'blog-details-right-sidebar.html'
+    success_url = reverse_lazy('blog-left')
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        data = super().get_context_data(object_list=object_list, **kwargs)
+        data['detailpost'] = Post.objects.filter(id=self.object.id).first()
+        data['postcategory'] = Post.objects.get(pk=self.object.id).categories.all()
+        data['category'] = BlogCategory.objects.all()
+        data['recent'] = Post.objects.all().order_by('-created_at')[:10]
+        data['comments'] = Comment.objects.filter(post_id=self.object.id).all()
+        data['post'] = self.object.id
         return data
 
 
