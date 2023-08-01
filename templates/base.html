@@ -1,4 +1,6 @@
 {% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
@@ -279,58 +281,73 @@
                     <div class="hb-menu">
                         <nav>
                             <ul>
-                                <li class="dropdown-holder"><a href="{% url 'index' %}">Home</a>
-                                    <ul class="hb-dropdown">
-                                        <li class="active"><a href="{% url 'index' %}">Home One</a></li>
-                                        <li><a href="{% url 'index2' %}">Home Two</a></li>
-                                        <li><a href="{% url 'index3' %}">Home Three</a></li>
-                                        <li><a href="{% url 'index4' %}">Home Four</a></li>
-                                    </ul>
+                                <li class=""><a href="{% url 'index' %}">Home</a>
+{#                                    <ul class="hb-dropdown">#}
+{#                                        <li class="active"><a href="{% url 'index' %}">Home One</a></li>#}
+{#                                        <li><a href="{% url 'index2' %}">Home Two</a></li>#}
+{#                                        <li><a href="{% url 'index3' %}">Home Three</a></li>#}
+{#                                        <li><a href="{% url 'index4' %}">Home Four</a></li>#}
+{#                                    </ul>#}
                                 </li>
                                 <li class="megamenu-holder"><a href="{% url 'shop-left' %}">Shop</a>
-                                    <ul class="megamenu hb-megamenu">
-                                        <li><a href="{% url 'shop-left' %}">Shop Page Layout</a>
-                                            <ul>
-                                                <li><a href="{% url 'shop-3' %}">Shop 3 Column</a></li>
-                                                <li><a href="{% url 'shop-4' %}">Shop 4 Column</a></li>
-                                                <li><a href="{% url 'shop-left' %}">Shop Left Sidebar</a></li>
-                                                <li><a href="{% url 'shop-right' %}">Shop Right Sidebar</a></li>
-                                                <li><a href="{% url 'shop-list' %}">Shop List</a></li>
-                                                <li><a href="{% url 'shop-list-left' %}">Shop List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="{% url 'shop-list-right' %}">Shop List Right
-                                                    Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{% url 'single-product-gallery-left' %}">Single Product Style</a>
-                                            <ul>
-                                                <li><a href="{% url 'single-product-carousel' %}">Single Product
-                                                    Carousel</a></li>
-                                                <li><a href="{% url 'single-product-gallery-left' %}">Single Product
-                                                    Gallery Left</a></li>
-                                                <li><a href="{% url 'single-product-gallery-right' %}">Single Product
-                                                    Gallery Right</a></li>
-                                                <li><a href="{% url 'single-product-tab-style-top' %}">Single Product Tab
-                                                    Style Top</a></li>
-                                                <li><a href="{% url 'single-product-tab-style-left' %}">Single Product Tab
-                                                    Style Left</a></li>
-                                                <li><a href="{% url 'single-product-tab-style-right' %}">Single Product Tab
-                                                    Style Right</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{% url 'single-product' %}">Single Products</a>
-                                            <ul>
-                                                <li><a href="{% url 'single-product' %}">Single Product</a></li>
-                                                <li><a href="{% url 'single-product-sale' %}">Single Product Sale</a></li>
-                                                <li><a href="{% url 'single-product-group' %}">Single Product Group</a>
-                                                </li>
-                                                <li><a href="{% url 'single-product-normal' %}">Single Product Normal</a>
-                                                </li>
-                                                <li><a href="{% url 'single-product-affiliate' %}">Single Product
-                                                    Affiliate</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    {% for product_category in object_list %}
+                                        <ul class="megamenu hb-megamenu">
+                                            <li>
+                                                <a href="{% url 'shop-left' slug=product_category.slug %}">{{ product_category.title }}</a>
+                                                {#                                                <ul>#}
+                                                {#                                                    <li>#}
+                                                {#                                                        <a href="{% url 'shop-3' slug=product_category.slug %}">{{ product_category.title }}</a>#}
+                                                {#                                                    </li>#}
+                                                {#                                                    <li><a href="{% url 'shop-4' %}">Shop 4 Column</a></li>#}
+                                                {#                                                    <li><a href="{% url 'shop-left' %}">Shop Left Sidebar</a></li>#}
+                                                {#                                                    <li><a href="{% url 'shop-right' %}">Shop Right Sidebar</a></li>#}
+                                                {#                                                    <li><a href="{% url 'shop-list' %}">Shop List</a></li>#}
+                                                {#                                                    <li><a href="{% url 'shop-list-left' %}">Shop List Left Sidebar</a>#}
+                                                {#                                                    </li>#}
+                                                {#                                                    <li><a href="{% url 'shop-list-right' %}">Shop List Right#}
+                                                {#                                                        Sidebar</a></li>#}
+                                                {#                                                </ul>#}
+                                            </li>
+{#                                            <li>#}
+{#                                                <a href="{% url 'single-product-gallery-left' %}">Single Product#}
+{#                                                    Style</a>#}
+{#                                                <ul>#}
+{#                                                    <li><a href="{% url 'single-product-carousel' %}">Single Product#}
+{#                                                        Carousel</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-gallery-left' %}">Single Product#}
+{#                                                        Gallery Left</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-gallery-right' %}">Single#}
+{#                                                        Product#}
+{#                                                        Gallery Right</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-tab-style-top' %}">Single#}
+{#                                                        Product Tab#}
+{#                                                        Style Top</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-tab-style-left' %}">Single#}
+{#                                                        Product Tab#}
+{#                                                        Style Left</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-tab-style-right' %}">Single#}
+{#                                                        Product Tab#}
+{#                                                        Style Right</a></li>#}
+{#                                                </ul>#}
+{#                                            </li>#}
+{#                                            <li>#}
+{#                                                <a href="{% url 'single-product' %}">Single Products</a>#}
+{#                                                <ul>#}
+{#                                                    <li><a href="{% url 'single-product' %}">Single Product</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-sale' %}">Single Product#}
+{#                                                        Sale</a></li>#}
+{#                                                    <li><a href="{% url 'single-product-group' %}">Single Product#}
+{#                                                        Group</a>#}
+{#                                                    </li>#}
+{#                                                    <li><a href="{% url 'single-product-normal' %}">Single Product#}
+{#                                                        Normal</a>#}
+{#                                                    </li>#}
+{#                                                    <li><a href="{% url 'single-product-affiliate' %}">Single Product#}
+{#                                                        Affiliate</a></li>#}
+{#                                                </ul>#}
+{#                                            </li>#}
+                                        </ul>
+                                    {% endfor %}
                                 </li>
                                 <li class="dropdown-holder"><a href="{% url 'blog-left' %}">Blog</a>
                                     <ul class="hb-dropdown">
@@ -714,3 +731,5 @@
 <script src="{% static 'js/scrollUp.min.js' %}"></script>
 <!-- Main/Activator js -->
 <script src="{% static 'js/main.js' %}"></script>
+
+</html>

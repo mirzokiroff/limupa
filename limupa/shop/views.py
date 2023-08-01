@@ -1,4 +1,6 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
+from shop.models import GeneralProductCategory
+
 
 class W404(TemplateView):
     template_name = '404.html'
@@ -80,7 +82,8 @@ class Faq(TemplateView):
     template_name = 'faq.html'
 
 
-class Index(TemplateView):
+class Index(ListView):
+    model = GeneralProductCategory
     template_name = 'index.html'
 
 
@@ -113,7 +116,7 @@ class Shop4(TemplateView):
 
 
 class ShopLeft(TemplateView):
-    template_name = 'shop-left-sidebar.html'
+    template_name = 'shop.html'
 
 
 class ShopRight(TemplateView):
@@ -182,17 +185,3 @@ class SingleProductTabStyleTop(TemplateView):
 
 class WishList(TemplateView):
     template_name = 'wishlist.html'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
