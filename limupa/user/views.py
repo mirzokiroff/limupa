@@ -5,6 +5,7 @@ from user.models import User
 from user.utls import send_message
 from django.urls import reverse_lazy
 
+
 class W404(TemplateView):
     template_name = '404.html'
 
@@ -138,7 +139,7 @@ class Shop4(TemplateView):
 
 
 class ShopLeft(TemplateView):
-    template_name = 'shop-left-sidebar.html'
+    template_name = 'shop.html'
 
 
 class ShopRight(TemplateView):
@@ -207,17 +208,3 @@ class SingleProductTabStyleTop(TemplateView):
 
 class WishList(TemplateView):
     template_name = 'wishlist.html'
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -75,9 +75,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'PORT': 5432,
         'HOST': 'localhost',
-        'USER': 'postgres',
+        'USER': 'admin',
         'PASSWORD': '1',
-        'NAME': 'shop_django'
+        'NAME': 'limupa'
     }
 }
 

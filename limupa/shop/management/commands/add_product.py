@@ -1,6 +1,6 @@
 import random
 from django.core.management.base import BaseCommand
-from limupa.shop.models import Product, Detailed, ProductImage, GeneralProductCategory, ProductCategory
+from shop.models import Product, Detailed, ProductImage, ProductCategory, Company
 from random import choice
 from django.utils.text import slugify
 from faker import Faker
@@ -10,14 +10,14 @@ class Command(BaseCommand):
     faker = Faker()
 
     def handle(self, *args, **options):
-        for i in range(2):
-            general_category = GeneralProductCategory.objects.create(
-                title='Laptop'+str(i)
-            )
-        for j in range(4):
-            product_category = ProductCategory.objects.create(
-                title='Zoom'+str(j)
-            )
+        # for i in range(2):
+        #     general_category = GeneralProductCategory.objects.create(
+        #         title='Laptop'+str(i)
+        #     )
+        # for j in range(4):
+        #     product_category = ProductCategory.objects.create(
+        #         title='Zoom'+str(j)
+        #     )
         product_all = Product.objects.all()
         for _ in range(1000):
             title = self.faker.sentence(6)
@@ -25,7 +25,9 @@ class Command(BaseCommand):
             product = Product.objects.create(
                 title=title,
                 slug=slugify(title),
-                description=self.faker.text()
+                description=self.faker.text(),
+                category=ProductCategory.objects.all().first(),
+                company=Company.objects.all().first()
             )
             details = Detailed.objects.create(
                 price=random.randint(200, 10000),
@@ -42,5 +44,3 @@ class Command(BaseCommand):
                 product_image = ProductImage.objects.create(
                     image='2-laptop-and-monitor.jpg'
                 )
-            product.categories.set([choice(product_all) for _ in range(3)])
-            product.company.set([choice(product_all) for _ in range(3)])
