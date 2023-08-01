@@ -133,9 +133,9 @@
                                                 <p>{{ detailpost.description|safe }}</p>
                                                 <div class="li-tag-line">
                                                     <h4>tag:</h4>
-                                                    <a href="#">Headphones</a>,
-                                                    <a href="#">Video Games</a>,
-                                                    <a href="#">Wireless Speakers</a>
+                                                    {% for pc in postcategory %}
+                                                        <a href="#">{{ pc.title }}</a>,
+                                                    {% endfor %}
                                                 </div>
                                                 <div class="li-blog-sharing text-center pt-30">
                                                     <h4>share this post:</h4>
