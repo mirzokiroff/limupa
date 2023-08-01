@@ -3,8 +3,8 @@ from django.db import models
 
 
 class Core(models.Model):
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='Slug company')
     title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='Slug company')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -31,13 +31,13 @@ class ProductImage(Core):
 
 
 class Detailed(models.Model):
-    class SIZE_CHOICES(models.TextChoices):
+    class SizeChoices(models.TextChoices):
         S = 'S', 'Small'
         M = 'M', 'Medium'
         L = 'L', 'Large'
         XL = 'XL', 'Extra large'
 
-    class PRODUCT_COLOR(models.TextChoices):
+    class ProductColor(models.TextChoices):
         BlUE = 'Blue', 'Blue'
         WHITE = 'White', 'White'
         RED = 'Red', 'Red'
@@ -49,8 +49,8 @@ class Detailed(models.Model):
     price = models.IntegerField(default=0)
     quantity = models.IntegerField(default=0)
     detail = models.CharField(max_length=100)
-    color = models.CharField(choices=PRODUCT_COLOR.choices, null=True)
-    size = models.CharField(choices=SIZE_CHOICES.choices, null=True)
+    color = models.CharField(choices=ProductColor.choices, null=True)
+    size = models.CharField(choices=SizeChoices.choices, null=True)
 
 
 class Company(Core):

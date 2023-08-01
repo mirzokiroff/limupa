@@ -1,28 +1,46 @@
+import random
 from django.core.management.base import BaseCommand
-from fuse_blog.models import Post, Category
+from limupa.shop.models import Product, Detailed, ProductImage, GeneralProductCategory, ProductCategory
 from random import choice
 from django.utils.text import slugify
 from faker import Faker
-import os
-
-from root.settings import BASE_DIR
 
 
 class Command(BaseCommand):
     faker = Faker()
 
     def handle(self, *args, **options):
-        with open('/home/user/Downloads/datas.txt', 'r') as f:
-            content = f.read()
-        c = Category.objects.all()
+        for i in range(2):
+            general_category = GeneralProductCategory.objects.create(
+                title='Laptop'+str(i)
+            )
+        for j in range(4):
+            product_category = ProductCategory.objects.create(
+                title='Zoom'+str(j)
+            )
+        product_all = Product.objects.all()
         for _ in range(1000):
             title = self.faker.sentence(6)
-            p = Post.objects.create(
-                main_photo='post/download.jpeg',
+
+            product = Product.objects.create(
                 title=title,
-                description=self.faker.text(),
-                content=content,
-                publish=True,
                 slug=slugify(title),
+                description=self.faker.text()
             )
-            p.categories.set([choice(c) for _ in range(3)])
+            details = Detailed.objects.create(
+                price=random.randint(200, 10000),
+                quantity=random.randint(1, 1000),
+                detail=random.shuffle([15.3, 14.0, 12.0, 16.0]),
+                color=random.shuffle(Detailed.ProductColor.values),
+                size=random.shuffle(Detailed.SizeChoices.values)
+            )
+            product_image = ProductImage.objects.create(
+                is_general=True,
+                image='zbad5tfbbe5newoz03dw.jpeg'
+            )
+            for i in range(3):
+                product_image = ProductImage.objects.create(
+                    image='2-laptop-and-monitor.jpg'
+                )
+            product.categories.set([choice(product_all) for _ in range(3)])
+            product.company.set([choice(product_all) for _ in range(3)])
