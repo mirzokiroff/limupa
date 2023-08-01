@@ -3,8 +3,8 @@ from django.db import models
 
 
 class Core(models.Model):
-    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='Slug company')
     title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=100, unique=True, db_index=True, verbose_name='Slug company')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
