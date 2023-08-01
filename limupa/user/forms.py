@@ -10,7 +10,7 @@ class RegisterForm(ModelForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'address', 'postcode', 'password', 'confirm_password')
+        fields = ('first_name', 'last_name', 'email', 'address', 'postcode', 'password', 'confirm_password', 'username')
 
     def clean_password(self):
         if self.cleaned_data['password'] != self.data['confirm_password']:

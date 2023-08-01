@@ -2,7 +2,7 @@ from django.views.generic import TemplateView, CreateView
 from user.forms import ContactForm, RegisterForm
 from user.models import User
 from user.utls import send_message
-
+from django.urls import reverse_lazy
 
 class W404(TemplateView):
     template_name = '404.html'
@@ -115,6 +115,7 @@ class LoginRegister(CreateView):
     queryset = User.objects.all()
     form_class = RegisterForm
     template_name = 'login-register.html'
+    success_url = reverse_lazy('index')
 
 
 class ProductDetails(TemplateView):
