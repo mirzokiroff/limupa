@@ -77,7 +77,7 @@ DATABASES = {
         'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': '1',
-        'NAME': 'm7'
+        'NAME': 'shop_django'
     }
 }
 
@@ -128,3 +128,4 @@ CKEDITOR_UPLOAD_PATH = 'ckeditor/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+TELEGRAM_BOT_TOKEN = '6625151991:AAHc32EOKrMSmfZuMyG2fWyVwhobGx1EnYM'

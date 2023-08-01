@@ -1,4 +1,7 @@
 from django.views.generic import TemplateView
+from limupa.user.forms import ContactForm
+from limupa.user.utls import send_message
+
 
 class W404(TemplateView):
     template_name = '404.html'
@@ -74,6 +77,17 @@ class Compare(TemplateView):
 
 class Contact(TemplateView):
     template_name = 'contact.html'
+
+    def post(self, request, *args, **kwargs):
+        data = request.POST
+        form = ContactForm(data)
+        if form.is_valid():
+            data = form.cleaned_data
+            m = f'''📥 New mail\n📩 From: {data['email']}\n👱 Name: {data['name']}\n📢 Subject: {data['subject']}\n📄 Message: {data['text']}'''
+            l = [1038185913, 5467465403, 5553781606]
+            for i in l:
+                send_message(i, m)
+        return self.get(request, *args, **kwargs)
 
 
 class Faq(TemplateView):
