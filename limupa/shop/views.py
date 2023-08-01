@@ -10,56 +10,12 @@ class AboutUs(TemplateView):
     template_name = 'about-us.html'
 
 
-class Blog2Col(TemplateView):
-    template_name = 'blog-2-column.html'
-
-
-class Blog3Col(TemplateView):
-    template_name = 'blog-3-column.html'
-
-
-class BlogAudio(TemplateView):
-    template_name = 'blog-audio-format.html'
-
-
-class BlogDetails(TemplateView):
-    template_name = 'blog-details.html'
-
-
-class BlogDetailsLeft(TemplateView):
-    template_name = 'blog-details-left-sidebar.html'
-
-
 class BlogDetailsRight(TemplateView):
     template_name = 'blog-details-right-sidebar.html'
 
 
-class BlogGallery(TemplateView):
-    template_name = 'blog-gallery-format.html'
-
-
 class BlogLeft(TemplateView):
     template_name = 'blog-left-sidebar.html'
-
-
-class BlogRight(TemplateView):
-    template_name = 'blog-right-sidebar.html'
-
-
-class BlogList(TemplateView):
-    template_name = 'blog-list.html'
-
-
-class BlogListLeft(TemplateView):
-    template_name = 'blog-list-left-sidebar.html'
-
-
-class BlogListRight(TemplateView):
-    template_name = 'blog-list-right-sidebar.html'
-
-
-class BlogVideo(TemplateView):
-    template_name = 'blog-video-format.html'
 
 
 class Cart(TemplateView):
@@ -87,18 +43,6 @@ class Index(ListView):
     template_name = 'index.html'
 
 
-class Index2(TemplateView):
-    template_name = 'index-2.html'
-
-
-class Index3(TemplateView):
-    template_name = 'index-3.html'
-
-
-class Index4(TemplateView):
-    template_name = 'index-4.html'
-
-
 class LoginRegister(TemplateView):
     template_name = 'login-register.html'
 
@@ -109,10 +53,6 @@ class ProductDetails(TemplateView):
 
 class Shop3(TemplateView):
     template_name = 'shop-3-column.html'
-
-
-class Shop4(TemplateView):
-    template_name = 'shop-4-column.html'
 
 
 class ShopLeft(TemplateView):

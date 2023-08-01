@@ -1,13 +1,13 @@
 from django.urls import path
-from user.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index4, WishList, Blog2Col, Blog3Col, \
-    BlogAudio, BlogDetails, BlogDetailsLeft, BlogDetailsRight, BlogGallery, BlogLeft, BlogList, BlogListLeft, \
-    BlogListRight, BlogVideo, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, ProductDetails, Shop3, Shop4, \
+from user.views import ShoppingCart, Index, WishList, LoginRegister, ProductDetails, Shop3, Shop4, \
     ShopLeft, ShopRight, ShopList, ShopListLeft, ShopListRight, SingleProduct, SingleProductAffiliate, \
     SingleProductCarousel, SingleProductGalleryLeft, SingleProductGalleryRight, SingleProductGroup, SingleProductNormal, \
-    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
+    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop, \
+    UserLoginView
 
 urlpatterns = [
     path('user/login-register/', LoginRegister.as_view(), name='login-register'),
+    path('user/login-register/', UserLoginView.as_view(), name='login'),
     path('user/product-details/', ProductDetails.as_view(), name='product-details'),
     path('user/shop-3/', Shop3.as_view(), name='shop-3'),
     path('user/shop-4/', Shop4.as_view(), name='shop-4'),
