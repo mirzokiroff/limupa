@@ -290,10 +290,10 @@
 {#                                    </ul>#}
                                 </li>
                                 <li class="megamenu-holder"><a href="{% url 'shop-left' %}">Shop</a>
-                                    {% for product_category in object_list %}
+{#                                    {% for product_category in object_list %}#}
                                         <ul class="megamenu hb-megamenu">
                                             <li>
-                                                <a href="{% url 'shop-left' slug=product_category.slug %}">{{ product_category.title }}</a>
+{#                                                <a href="{% url 'shop-left' slug=product_category.slug %}">{{ product_category.title }}</a>#}
                                                 {#                                                <ul>#}
                                                 {#                                                    <li>#}
                                                 {#                                                        <a href="{% url 'shop-3' slug=product_category.slug %}">{{ product_category.title }}</a>#}
@@ -347,7 +347,7 @@
 {#                                                </ul>#}
 {#                                            </li>#}
                                         </ul>
-                                    {% endfor %}
+{#                                    {% endfor %}#}
                                 </li>
                                 <li class="dropdown-holder"><a href="{% url 'blog-left' %}">Blog</a>
                                     <ul class="hb-dropdown">
