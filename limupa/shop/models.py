@@ -19,6 +19,7 @@ class GeneralProductCategory(Core):
     created_at, updated_at = None, None
 
 
+
 class ProductCategory(Core):
     created_at, updated_at = None, None
     general = models.ForeignKey(GeneralProductCategory, on_delete=models.CASCADE)
