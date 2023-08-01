@@ -1,10 +1,11 @@
 from django.urls import path
-from shop.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index4, WishList, Blog2Col, Blog3Col, \
+from limupa.shop.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index4, WishList, Blog2Col, Blog3Col, \
     BlogAudio, BlogDetails, BlogDetailsLeft, BlogDetailsRight, BlogGallery, BlogLeft, BlogList, BlogListLeft, \
     BlogListRight, BlogVideo, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, ProductDetails, Shop3, Shop4, \
     ShopLeft, ShopRight, ShopList, ShopListLeft, ShopListRight, SingleProduct, SingleProductAffiliate, \
     SingleProductCarousel, SingleProductGalleryLeft, SingleProductGalleryRight, SingleProductGroup, SingleProductNormal, \
     SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
+from limupa.shop.views import setcookie
 
 urlpatterns = [
     path('blog-3-col/', Blog3Col.as_view(), name='blog-3-col'),
@@ -19,4 +20,5 @@ urlpatterns = [
     path('shopping-cart/', ShoppingCart.as_view(), name='shopping-cart'),
     path('single-product/', SingleProductNormal.as_view(), name='single-product-normal'),
     path('wish-list/', WishList.as_view(), name='wish-list'),
+    path('setcookie', setcookie, name='cookie'),
 ]
