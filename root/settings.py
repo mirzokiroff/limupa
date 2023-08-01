@@ -72,12 +72,12 @@ WSGI_APPLICATION = 'root.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shop_django',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'PORT': 5432,
+        'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': '1',
-        'HOST': 'localhost',  # Change this to your PostgreSQL server's host if it's not on localhost
-        'PORT': '5432',
+        'NAME': 'm7'
     }
 }
 
@@ -121,9 +121,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR / 'static')]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
-
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
