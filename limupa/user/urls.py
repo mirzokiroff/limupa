@@ -4,7 +4,7 @@ from limupa.user.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3
     BlogListRight, BlogVideo, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, ProductDetails, Shop3, Shop4, \
     ShopLeft, ShopRight, ShopList, ShopListLeft, ShopListRight, SingleProduct, SingleProductAffiliate, \
     SingleProductCarousel, SingleProductGalleryLeft, SingleProductGalleryRight, SingleProductGroup, SingleProductNormal, \
-    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop, contact_form
+    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
 
 urlpatterns = [
     path('user/404/', W404.as_view(), name='404'),
@@ -25,7 +25,6 @@ urlpatterns = [
     path('user/cart/', Cart.as_view(), name='cart'),
     path('user/check-out/', CheckOut.as_view(), name='check-out'),
     path('user/compare/', Compare.as_view(), name='compare'),
-    # path('user/contact/', contact_form, name='contact'),
     path('user/contact/', Contact.as_view(), name='contact'),
     path('user/faq/', Faq.as_view(), name='faq'),
     path('user/', Index.as_view(), name='index'),
