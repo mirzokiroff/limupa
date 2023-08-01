@@ -4,7 +4,8 @@ from user.views import ShoppingCart, W404, AboutUs, Index, Index2, Index3, Index
     BlogListRight, BlogVideo, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, ProductDetails, Shop3, Shop4, \
     ShopLeft, ShopRight, ShopList, ShopListLeft, ShopListRight, SingleProduct, SingleProductAffiliate, \
     SingleProductCarousel, SingleProductGalleryLeft, SingleProductGalleryRight, SingleProductGroup, SingleProductNormal, \
-    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop
+    SingleProductSale, SingleProductTabStyleLeft, SingleProductTabStyleRight, SingleProductTabStyleTop, \
+    UserLoginView
 
 urlpatterns = [
     path('user/404/', W404.as_view(), name='404'),
@@ -32,6 +33,7 @@ urlpatterns = [
     path('user/index3/', Index3.as_view(), name='index3'),
     path('user/index4/', Index4.as_view(), name='index4'),
     path('user/login-register/', LoginRegister.as_view(), name='login-register'),
+    path('user/login-register/', UserLoginView.as_view(), name='login'),
     path('user/product-details/', ProductDetails.as_view(), name='product-details'),
     path('user/shop-3/', Shop3.as_view(), name='shop-3'),
     path('user/shop-4/', Shop4.as_view(), name='shop-4'),

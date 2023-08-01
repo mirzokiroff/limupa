@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, CreateView
-from user.forms import ContactForm, RegisterForm
+from user.forms import ContactForm, RegisterForm, CustomLoginForm
+from django.contrib.auth.views import LoginView
 from user.models import User
 from user.utls import send_message
 from django.urls import reverse_lazy
@@ -116,6 +117,12 @@ class LoginRegister(CreateView):
     form_class = RegisterForm
     template_name = 'login-register.html'
     success_url = reverse_lazy('index')
+
+
+class UserLoginView(LoginView):
+    form_class = CustomLoginForm
+    template_name = 'login-register.html'
+    next_page = reverse_lazy('index')
 
 
 class ProductDetails(TemplateView):

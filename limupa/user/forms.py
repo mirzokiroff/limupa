@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
 from user.models import User
+from django.contrib.auth.forms import AuthenticationForm
 
 
 class RegisterForm(ModelForm):
@@ -23,3 +24,7 @@ class ContactForm(Form):
     email = EmailField(max_length=255)
     subject = CharField(max_length=255)
     text = CharField()
+
+
+class CustomLoginForm(AuthenticationForm):
+    pass
