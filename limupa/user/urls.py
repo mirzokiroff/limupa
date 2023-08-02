@@ -31,6 +31,5 @@ urlpatterns = [
     path('user/single-product-tab-style-right/', SingleProductTabStyleRight.as_view(),
          name='single-product-tab-style-right'),
     path('user/single-product-tab-style-top/', SingleProductTabStyleTop.as_view(), name='single-product-tab-style-top'),
-    path('user/wish-list/', WishList.as_view(), name='wishlist'),
-
+    # path('user/wishlist/', WishList.as_view(), name='wishlist'),
 ]

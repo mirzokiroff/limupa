@@ -52,7 +52,8 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="header-top-left">
                         <ul class="phone-wrap">
-                            <li><span>Telephone Enquiry:</span><a href="#">(+123) 123 321 345</a></li>
+                            <li><span>Telephone Enquiry:</span><a href="tel: +998 77 777 77 77">+998 77 777 77 77</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -127,82 +128,21 @@
                 <!-- Begin Header Middle Right Area -->
                 <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                     <!-- Begin Header Middle Searchbox Area -->
-                    <form action="#" class="hm-searchbox">
-                        <select class="nice-select select-search-category">
-                            <option value="0">All</option>
-                            <option value="10">Laptops</option>
-                            <option value="17">- - Prime Video</option>
-                            <option value="20">- - - - All Videos</option>
-                            <option value="21">- - - - Blouses</option>
-                            <option value="22">- - - - Evening Dresses</option>
-                            <option value="23">- - - - Summer Dresses</option>
-                            <option value="24">- - - - T-shirts</option>
-                            <option value="25">- - - - Rent or Buy</option>
-                            <option value="26">- - - - Your Watchlist</option>
-                            <option value="27">- - - - Watch Anywhere</option>
-                            <option value="28">- - - - Getting Started</option>
-                            <option value="18">- - - - Computers</option>
-                            <option value="29">- - - - More to Explore</option>
-                            <option value="30">- - - - TV &amp; Video</option>
-                            <option value="31">- - - - Audio &amp; Theater</option>
-                            <option value="32">- - - - Camera, Photo</option>
-                            <option value="33">- - - - Cell Phones</option>
-                            <option value="34">- - - - Headphones</option>
-                            <option value="35">- - - - Video Games</option>
-                            <option value="36">- - - - Wireless Speakers</option>
-                            <option value="19">- - - - Electronics</option>
-                            <option value="37">- - - - Amazon Home</option>
-                            <option value="38">- - - - Kitchen &amp; Dining</option>
-                            <option value="39">- - - - Furniture</option>
-                            <option value="40">- - - - Bed &amp; Bath</option>
-                            <option value="41">- - - - Appliances</option>
-                            <option value="11">TV &amp; Audio</option>
-                            <option value="42">- - Chamcham</option>
-                            <option value="45">- - - - Office</option>
-                            <option value="47">- - - - Gaming</option>
-                            <option value="48">- - - - Chromebook</option>
-                            <option value="49">- - - - Refurbished</option>
-                            <option value="50">- - - - Touchscreen</option>
-                            <option value="51">- - - - Ultrabooks</option>
-                            <option value="52">- - - - Blouses</option>
-                            <option value="43">- - Sanai</option>
-                            <option value="53">- - - - Hard Drives</option>
-                            <option value="54">- - - - Graphic Cards</option>
-                            <option value="55">- - - - Processors (CPU)</option>
-                            <option value="56">- - - - Memory</option>
-                            <option value="57">- - - - Motherboards</option>
-                            <option value="58">- - - - Fans &amp; Cooling</option>
-                            <option value="59">- - - - CD/DVD Drives</option>
-                            <option value="44">- - Meito</option>
-                            <option value="60">- - - - Sound Cards</option>
-                            <option value="61">- - - - Cases &amp; Towers</option>
-                            <option value="62">- - - - Casual Dresses</option>
-                            <option value="63">- - - - Evening Dresses</option>
-                            <option value="64">- - - - T-shirts</option>
-                            <option value="65">- - - - Tops</option>
-                            <option value="12">Smartphone</option>
-                            <option value="66">- - Camera Accessories</option>
-                            <option value="68">- - - - Octa Core</option>
-                            <option value="69">- - - - Quad Core</option>
-                            <option value="70">- - - - Dual Core</option>
-                            <option value="71">- - - - 7.0 Screen</option>
-                            <option value="72">- - - - 9.0 Screen</option>
-                            <option value="73">- - - - Bags &amp; Cases</option>
-                            <option value="67">- - XailStation</option>
-                            <option value="74">- - - - Batteries</option>
-                            <option value="75">- - - - Microphones</option>
-                            <option value="76">- - - - Stabilizers</option>
-                            <option value="77">- - - - Video Tapes</option>
-                            <option value="78">- - - - Memory Card Readers</option>
-                            <option value="79">- - - - Tripods</option>
-                            <option value="13">Cameras</option>
-                            <option value="14">headphone</option>
-                            <option value="15">Smartwatch</option>
-                            <option value="16">Accessories</option>
-                        </select>
-                        <input type="text" placeholder="Enter your search key ...">
-                        <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    <div class="hm-searchbox">
+                        <form method="get" class="hm-searchbox">
+                            <select class="nice-select select-search-category">
+                                {% for category in categories %}
+                                    {% if category in categories %}
+                                        <option value="{{ category|lower }}">{{ category }}</option>
+                                    {% else %}
+                                        <option value="0">{{ category }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <input type="text" placeholder="Enter your search key ...">
+                            <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
                     <!-- Header Middle Searchbox Area End Here -->
                     <!-- Begin Header Middle Right Area -->
                     <div class="header-middle-right">
@@ -295,9 +235,9 @@
                                     </ul>
                                 </li>
 
-                                <li class="megamenu-static-holder"><a href="{% url 'index' %}">Blog</a>
+                                <li class="megamenu-static-holder"><a href="{% url 'blog-left' %}">Blog</a>
                                     <ul class="megamenu hb-megamenu">
-                                        <li><a href="{% url 'blog-left' %}">Blog Layouts</a>
+                                        <li><a href="{% url 'blog-left' %}">Blog Detail</a>
 
                                         </li>
 
@@ -306,8 +246,8 @@
                                 </li>
                                 <li><a href="{% url 'aboutus' %}">About Us</a></li>
                                 <li><a href="{% url 'contact' %}">Contact</a></li>
-                                <li><a href="{% url 'shop-left' %}">Smartwatch</a></li>
-                                <li><a href="{% url 'shop-left' %}">Accessories</a></li>
+                                {#                                <li><a href="{% url 'shop-left' %}">Smartwatch</a></li>#}
+                                {#                                <li><a href="{% url 'shop-left' %}">Accessories</a></li>#}
                             </ul>
                         </nav>
                     </div>
