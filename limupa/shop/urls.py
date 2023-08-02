@@ -1,7 +1,7 @@
 from django.urls import path
 from limupa.shop.views import ShoppingCart, WishList, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, \
     ProductDetails, ShopLeft, SingleProductNormal
-from limupa.shop.views import setcookie
+# from shop.views import setcookie
 
 urlpatterns = [
     path('cart/', Cart.as_view(), name='cart'),
@@ -15,5 +15,5 @@ urlpatterns = [
     path('shopping-cart/', ShoppingCart.as_view(), name='shopping-cart'),
     path('single-product/', SingleProductNormal.as_view(), name='single-product-normal'),
     path('wish-list/', WishList.as_view(), name='wish-list'),
-    path('setcookie', setcookie, name='cookie'),
+    # path('setcookie', setcookie, name='cookie'),
 ]

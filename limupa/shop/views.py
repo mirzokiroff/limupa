@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView
 from shop.models import GeneralProductCategory
 
@@ -126,9 +125,3 @@ class SingleProductTabStyleTop(TemplateView):
 
 class WishList(TemplateView):
     template_name = 'wishlist.html'
-
-
-def setcookie(request):
-    html = HttpResponse("<h1>Welcome to Limupa Portal</h1>")
-    html.set_cookie('Cookie', 'We are setting a cookie', max_age=None)
-    return html

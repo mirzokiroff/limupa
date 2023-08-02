@@ -6,7 +6,6 @@ from user.views import ShoppingCart, Index, WishList, LoginRegister, ProductDeta
     UserLoginView
 
 urlpatterns = [
-    path('', Index.as_view(), name='index'),
     path('user/login-register/', LoginRegister.as_view(), name='login-register'),
     path('user/login-register/', UserLoginView.as_view(), name='login'),
     path('user/product-details/', ProductDetails.as_view(), name='product-details'),
