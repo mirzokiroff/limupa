@@ -2,7 +2,7 @@ from django.forms import Form, CharField, EmailField
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import make_password
-from user.models import User
+from user.models import User, OurTeam
 from django.contrib.auth.forms import AuthenticationForm
 
 
@@ -28,3 +28,9 @@ class ContactForm(Form):
 
 class CustomLoginForm(AuthenticationForm):
     pass
+
+
+class OurTeamForm(ModelForm):
+    class Meta:
+        model = OurTeam
+        fields = ['name', 'job', 'image', 'instagram', 'email', 'twitter', 'linkedin', 'facebook']

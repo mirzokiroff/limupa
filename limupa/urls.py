@@ -12,4 +12,6 @@ urlpatterns = [
     path('login-register/', LoginRegister.as_view(), name='login-register'),
     path('faq/', Faq.as_view(), name='faq'),
     path('contact/', Contact.as_view(), name='contact'),
+    path('', Index.as_view(), name='index'),
+
 ]

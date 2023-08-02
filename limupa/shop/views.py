@@ -2,14 +2,18 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView, ListView
 from shop.models import GeneralProductCategory
+from user.forms import OurTeamForm
+from user.models import OurTeam
 
 
 class W404(TemplateView):
     template_name = '404.html'
 
 
-class AboutUs(TemplateView):
-    template_name = 'about-us.html'
+class AboutUs(View):
+    def get(self, request, *args, **kwargs):
+        customers = OurTeam.objects.all()
+        return render(request, 'about-us.html', {'types': customers})
 
 
 class BlogDetailsRight(TemplateView):

@@ -17,3 +17,17 @@ class User(AbstractUser):
     #     return reverse('article_detail', args=[str(self.id)])
     # country = models.CharField(max_length=255, blank=True, null=True)
     # company_name = models.CharField(max_length=255, blank=True, null=True)
+
+
+class OurTeam(models.Model):
+    image = models.ImageField(upload_to='customers/')
+    name = models.CharField(max_length=222)
+    job = models.CharField(max_length=222)
+    email = models.EmailField(max_length=222, unique=True, null=True, blank=True)
+    facebook = models.URLField(max_length=222, null=True, blank=True)
+    twitter = models.URLField(max_length=222, null=True, blank=True)
+    linkedin = models.URLField(max_length=222, null=True, blank=True)
+    instagram = models.URLField(max_length=222, null=True, blank=True)
+
+    def __str__(self):
+        return self.name

@@ -14,26 +14,6 @@ class AboutUs(TemplateView):
     template_name = 'about-us.html'
 
 
-class Blog2Col(TemplateView):
-    template_name = 'blog-2-column.html'
-
-
-class Blog3Col(TemplateView):
-    template_name = 'blog-3-column.html'
-
-
-class BlogAudio(TemplateView):
-    template_name = 'blog-audio-format.html'
-
-
-class BlogDetails(TemplateView):
-    template_name = 'blog-details.html'
-
-
-class BlogDetailsLeft(TemplateView):
-    template_name = 'blog-details-left-sidebar.html'
-
-
 class BlogDetailsRight(TemplateView):
     template_name = 'blog-details-right-sidebar.html'
 
@@ -101,18 +81,6 @@ class Index(TemplateView):
     template_name = 'index.html'
 
 
-class Index2(TemplateView):
-    template_name = 'index-2.html'
-
-
-class Index3(TemplateView):
-    template_name = 'index-3.html'
-
-
-class Index4(TemplateView):
-    template_name = 'index-4.html'
-
-
 class LoginRegister(CreateView):
     queryset = User.objects.all()
     form_class = RegisterForm
@@ -134,10 +102,6 @@ class Shop3(TemplateView):
     template_name = 'shop-3-column.html'
 
 
-class Shop4(TemplateView):
-    template_name = 'shop-4-column.html'
-
-
 class ShopLeft(TemplateView):
     template_name = 'shop.html'
 
@@ -152,10 +116,6 @@ class ShopList(TemplateView):
 
 class ShopListLeft(TemplateView):
     template_name = 'shop-list-left-sidebar.html'
-
-
-class ShopListRight(TemplateView):
-    template_name = 'shop-list-right-sidebar.html'
 
 
 class ShoppingCart(TemplateView):
@@ -178,10 +138,6 @@ class SingleProductGalleryLeft(TemplateView):
     template_name = 'single-product-gallery-left.html'
 
 
-class SingleProductGalleryRight(TemplateView):
-    template_name = 'single-product-gallery-right.html'
-
-
 class SingleProductGroup(TemplateView):
     template_name = 'single-product-group.html'
 
@@ -192,14 +148,6 @@ class SingleProductNormal(TemplateView):
 
 class SingleProductSale(TemplateView):
     template_name = 'single-product-sale.html'
-
-
-class SingleProductTabStyleLeft(TemplateView):
-    template_name = 'single-product-tab-style-left.html'
-
-
-class SingleProductTabStyleRight(TemplateView):
-    template_name = 'single-product-tab-style-right.html'
 
 
 class SingleProductTabStyleTop(TemplateView):
