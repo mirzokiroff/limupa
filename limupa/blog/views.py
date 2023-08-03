@@ -12,8 +12,13 @@ class BlogLeft(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(object_list=object_list, **kwargs)
         if self.request.GET:
-            pic = self.request.GET.dict().popitem()[0]
-            data['posts'] = BlogCategory.objects.get(title=pic).post_category.all()
+            key = self.request.GET.get('q')
+            if key:
+                data['posts'] = Post.objects.filter(title__icontains=key)
+                print(data['posts'])
+            else:
+                pic = self.request.GET.dict().popitem()[0]
+                data['posts'] = BlogCategory.objects.get(title=pic).post_category.all()
         else:
             data['posts'] = Post.objects.all()
         data['recent'] = Post.objects.all().order_by('-created_at')[:10]
@@ -38,10 +43,3 @@ class BlogLeftDetails(DetailView, CreateView):
         data['post'] = self.object.id
         return data
 
-
-class BlogList(TemplateView):
-    template_name = 'blog-list.html'
-
-
-class Index(TemplateView):
-    template_name = 'index.html'
