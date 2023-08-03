@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView
 
 from blog.forms import BlogCommentForm
 from blog.models import Post, BlogCategory, Comment
