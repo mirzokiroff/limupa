@@ -1,21 +1,24 @@
-import random
 from django.core.management.base import BaseCommand
-from limupa.shop.models import Product, Detailed, ProductImage, ProductCategory, Company, GeneralProductCategory
-from random import choice
-from django.utils.text import slugify
 from faker import Faker
 from time import time
+
+from limupa.user.models import OurTeam
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
         fake = Faker()
         start_time = time()
-        for i in range(1, 100):
-            title = fake.text(7)
-            GeneralProductCategory.objects.create(
-                title=title,
-                slug=slugify(title)
+        for i in range(1, 10):
+            OurTeam.objects.create(
+                image=fake.image_url(),
+                name=fake.name(),
+                job=fake.job(),
+                email=fake.email(uniq=True),
+                facebook=fake.url(),
+                twitter=fake.url(),
+                linkedin=fake.url(),
+                instagram=fake.url()
             )
             print(f'post {i} has been created')
         end_time = time()
