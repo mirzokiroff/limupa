@@ -1,6 +1,6 @@
 import random
 from django.core.management.base import BaseCommand
-from limupa.shop.models import Product, Detailed, ProductImage, ProductCategory, Company, GeneralProductCategory
+from shop.models import Product, Detailed, ProductImage, ProductCategory, Company, GeneralProductCategory
 from django.utils.text import slugify
 from faker import Faker
 from time import time

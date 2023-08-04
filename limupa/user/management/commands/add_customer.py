@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from faker import Faker
 from time import time
 
-from limupa.user.models import OurTeam
+from user.models import OurTeam
 
 
 class Command(BaseCommand):
@@ -14,7 +14,7 @@ class Command(BaseCommand):
                 image=fake.image_url(),
                 name=fake.name(),
                 job=fake.job(),
-                email=fake.email(uniq=True),
+                email=fake.email(),
                 facebook=fake.url(),
                 twitter=fake.url(),
                 linkedin=fake.url(),
