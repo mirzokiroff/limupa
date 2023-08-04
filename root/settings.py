@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.append(os.path.join(BASE_DIR, 'limupa'))
 
@@ -32,11 +33,13 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 
     # Custom apps
-    'limupa.blog',
-    'limupa.shop',
-    'limupa.user'
+    'blog',
+    'shop',
+    'user'
 ]
+# AUTH_USER_MODEL = 'limupa.user.User'
 AUTH_USER_MODEL = 'user.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -73,11 +76,11 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'PORT': 5434,
+        'PORT': 5432,
         'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': 'black090',
-        'NAME': 'sleep_db'
+        'USER': 'admin',
+        'PASSWORD': '1',
+        'NAME': 'limupa'
     }
 }
 
