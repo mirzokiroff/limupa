@@ -14,4 +14,10 @@ urlpatterns = [
     path('contact/', Contact.as_view(), name='contact'),
     path('', Index.as_view(), name='index'),
 
+
+
+
+
+
+
 ]
