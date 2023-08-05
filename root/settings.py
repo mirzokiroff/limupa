@@ -82,10 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'PORT': 5432,
-        'HOST': 'localhost',
-        'USER': 'admin',
-        'PASSWORD': '1',
-        'NAME': 'limupa'
+        'HOST': 'pg',
+        'USER': 'postgres',
+        'PASSWORD': 1,
+        'NAME': 'limupa_db'
     }
 }
 
