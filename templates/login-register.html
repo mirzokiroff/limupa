@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block container %}
+{% load account %}
+{% load socialaccount %}
 
 
     <!-- login-register31:27-->
@@ -60,6 +62,12 @@
                                 </div>
                             </div>
                         </form>
+{#                        <a class="btn btn-primary" href="#" role="button">Google</a>#}
+                        <form action="{% provider_login_url "google" %}" method="post">{% csrf_token %}
+                            <button type="submit" class="btn btn-block btn-danger mb-3">
+                                <span class="icon-google mr-3"></span> Login with Google
+                            </button>
+                        </form>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
                         <form method="post" action="{% url 'login-register' %}">{% csrf_token %}
@@ -110,10 +118,15 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
         <!-- Login Content Area End Here -->
         <!-- Begin Footer Area -->
 

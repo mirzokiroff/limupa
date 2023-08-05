@@ -57,8 +57,8 @@ class Index(View):
         return render(request, self.template_name, {'categories': categories})
 
 
-class LoginRegister(TemplateView):
-    template_name = 'login-register.html'
+# class LoginRegister(TemplateView):
+#     template_name = 'login-register.html'
 
 
 class ProductDetails(TemplateView):

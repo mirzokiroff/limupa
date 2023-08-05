@@ -1,5 +1,5 @@
 from django.urls import path
-from shop.views import ShoppingCart, WishList, Cart, CheckOut, Compare, Contact, Faq, LoginRegister, \
+from shop.views import ShoppingCart, WishList, Cart, CheckOut, Compare, Contact, Faq, \
     ProductDetails, ShopLeft, SingleProductNormal, Index
 
 # from shop.views import setcookie

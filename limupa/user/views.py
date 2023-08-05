@@ -85,7 +85,7 @@ class LoginRegister(CreateView):
     queryset = User.objects.all()
     form_class = RegisterForm
     template_name = 'login-register.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('login')
 
 
 class UserLoginView(LoginView):
