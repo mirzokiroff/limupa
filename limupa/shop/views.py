@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView, ListView
-from shop.models import GeneralProductCategory
+from shop.models import GeneralProductCategory, Product
 from user.forms import OurTeamForm
 from user.models import OurTeam
 
@@ -24,8 +23,7 @@ class BlogLeft(TemplateView):
     template_name = 'blog-left-sidebar.html'
 
 
-class Cart(ListView):
-    model = GeneralProductCategory
+class Cart(TemplateView):
     template_name = 'cart.html'
 
 
@@ -45,16 +43,9 @@ class Faq(TemplateView):
     template_name = 'faq.html'
 
 
-class Index(View):
-    # model = GeneralProductCategory
+class Index(ListView):
+    model = GeneralProductCategory
     template_name = 'index.html'
-
-    def get(self, request):
-        categories = [
-            'blog',
-            'shop',
-        ]
-        return render(request, self.template_name, {'categories': categories})
 
 
 # class LoginRegister(TemplateView):
@@ -85,6 +76,10 @@ class ShopListLeft(TemplateView):
     template_name = 'shop-list-left-sidebar.html'
 
 
+class ShopListRight(TemplateView):
+    template_name = 'shop-list-right-sidebar.html'
+
+
 class ShoppingCart(TemplateView):
     template_name = 'shopping-cart.html'
 
@@ -105,6 +100,10 @@ class SingleProductGalleryLeft(TemplateView):
     template_name = 'single-product-gallery-left.html'
 
 
+class SingleProductGalleryRight(TemplateView):
+    template_name = 'single-product-gallery-right.html'
+
+
 class SingleProductGroup(TemplateView):
     template_name = 'single-product-group.html'
 
@@ -117,9 +116,33 @@ class SingleProductSale(TemplateView):
     template_name = 'single-product-sale.html'
 
 
+class SingleProductTabStyleLeft(TemplateView):
+    template_name = 'single-product-tab-style-left.html'
+
+
+class SingleProductTabStyleRight(TemplateView):
+    template_name = 'single-product-tab-style-right.html'
+
+
 class SingleProductTabStyleTop(TemplateView):
     template_name = 'single-product-tab-style-top.html'
 
 
 class WishList(TemplateView):
     template_name = 'wishlist.html'
+
+
+class SearchView(ListView):
+    template_name = 'base.html'
+    model = Product
+
+    def get_queryset(self):
+        query = self.request.GET.get('search')
+
+        if query:
+            object_list = self.model.objects.filter(name__icontains=query)
+        else:
+            object_list = self.model.objects.none()
+
+        return object_list
+
