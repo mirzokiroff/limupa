@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'shop',
     'user'
 ]
-# AUTH_USER_MODEL = 'limupa.user.User'
+
 AUTH_USER_MODEL = 'user.User'
 
 MIDDLEWARE = [
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'root.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.',
         'PORT': 5432,
         'HOST': 'pg',
         'USER': 'postgres',
@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
