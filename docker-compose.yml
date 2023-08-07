@@ -1,0 +1,28 @@
+version: "3.9"
+
+
+services:
+  web:
+    build: .
+    restart: always
+    container_name: limupa_cont
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/limupa
+    ports:
+      - "8000:8000"
+    depends_on:
+      - pg
+  pg:
+    image: postgres:15-alpine
+    restart: always
+    container_name: pg_cont
+    environment:
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_DB=limupa_db
+      - POSTGRES_USER=postgres
+      - PORT=5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
